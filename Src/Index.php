@@ -8,7 +8,10 @@
    
 <body>
     <?php include "header.php"; ?>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
     
     <a target="_blank" href="img_forest.jpg">
     <img src="IMG_2611.jpeg" alt="image">

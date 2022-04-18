@@ -6,16 +6,22 @@
     <link href="style.css" rel="stylesheet">
 </head>
    
-<body>
-
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li style="float:right"><a class="active" href="#about">About</a></li>
-  <li style="float:none"><a href="#about">Les histoires dont vous etes la.e protagoniste.</a></li>
+<header class="header">
+<a href="" class="logo">Les histoires dont vous êtes la protagoniste</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#news">Histoire</a></li>
+        <li><a href="#contact">Autre</a></li>
+        <li><a href="#login">Se connecter</a></li>
   
 </ul>
+</header>
+
+<body>
+
+coucou
 
 
 </body>
