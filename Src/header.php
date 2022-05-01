@@ -1,3 +1,4 @@
+<?php session_start(); ?> 
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +14,9 @@
     <ul class="menu">
         <li><a href="#home">Accueil</a></li>
         <li><a href="#news">Histoire</a></li>
+        <?php  if (isUserConnected){?>
+            <li><a href="AddStory.php">Créez votre propre histoire</a></li> 
+        <?php }  ?>
         <li><a href="#contact">Autre</a></li>
         <li><a href="#login">Se connecter</a></li>
   
