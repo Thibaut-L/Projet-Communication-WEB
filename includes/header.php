@@ -6,8 +6,7 @@
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#news">Histoire</a></li>
+        <li><a href="Index.php">Accueil</a></li>
         <?php  if (isUserConnected()){?>
             <li><a href="Src/AddStory.php">Créez votre propre histoire</a></li> 
         <?php } ?>
