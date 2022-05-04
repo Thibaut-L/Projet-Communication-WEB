@@ -1,12 +1,6 @@
-<?php session_start(); ?> 
-<!DOCTYPE html>
-<html>
+<?php require_once "functions.php"; ?> 
 
-<head>
-    <meta charset="utf-8">
-    <link href="style.css" rel="stylesheet">
-</head>
-   
+
 <header class="header">
 <a href="" class="logo">Les histoires dont vous êtes la protagoniste</a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -14,20 +8,13 @@
     <ul class="menu">
         <li><a href="#home">Accueil</a></li>
         <li><a href="#news">Histoire</a></li>
-        <?php  if (isUserConnected){?>
-            <li><a href="AddStory.php">Créez votre propre histoire</a></li> 
-        <?php }  ?>
+        <?php /* if (isUserConnected()){?>
+            <li><a href="Src/AddStory.php">Créez votre propre histoire</a></li> 
+        <?php } */ ?>
         <li><a href="#contact">Autre</a></li>
         <li><a href="#login">Se connecter</a></li>
   
 </ul>
 </header>
 
-<body>
-
-coucou
-
-
-</body>
-</html>
 

@@ -11,6 +11,7 @@ img:hover {
   }
 
 body {
+    padding-top:60px;
     margin: 0;
     font-family: Helvetica, sans-serif;
     background-color: #f4f4f4;
@@ -37,7 +38,7 @@ body {
     overflow: hidden;
     background-color: rgb(146, 60, 60);
   }
-  
+
   .header li a {
     display: block;
     padding: 20px 20px;
