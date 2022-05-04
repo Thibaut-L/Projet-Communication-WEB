@@ -17,4 +17,6 @@
 </ul>
 </header>
 
+<?php require_once "scripts.php"; ?> 
+
 
