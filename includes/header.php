@@ -8,9 +8,9 @@
     <ul class="menu">
         <li><a href="#home">Accueil</a></li>
         <li><a href="#news">Histoire</a></li>
-        <?php /* if (isUserConnected()){?>
+        <?php  if (isUserConnected()){?>
             <li><a href="Src/AddStory.php">Créez votre propre histoire</a></li> 
-        <?php } */ ?>
+        <?php } ?>
         <li><a href="#contact">Autre</a></li>
         <li><a href="#login">Se connecter</a></li>
   
