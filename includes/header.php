@@ -12,7 +12,7 @@
             <li><a href="Src/AddStory.php">Créez votre propre histoire</a></li> 
         <?php } ?>
         <li><a href="#contact">Autre</a></li>
-        <li><a href="#login">Se connecter</a></li>
+        <li><a href="login.php">Se connecter</a></li>
   
 </ul>
 </header>
