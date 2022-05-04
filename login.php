@@ -56,6 +56,13 @@ require_once "includes/head.php";
                         <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-log-in"></span> Se connecter</button>
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        Vous n'avez pas encore de compte ?
+                        <br>
+                        <a href="addNewUser.php"><span class="glyphicon glyphicon-log-in"></span> Créer un compte</a>
+                    </div>
+                </div>
             </form>
         </div>
 
