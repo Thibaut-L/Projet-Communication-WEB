@@ -1,5 +1,5 @@
 <?php require_once "includes/functions.php"; ?> 
-
+<?php require_once "includes/ConnectDB.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@ require_once "includes/head.php";
     <?php require_once "includes/header.php"; ?>
 <br><br><br>
     <div class="well">
-        <form class="form-signin form-horizontal" role="form" action="login.php" method="post">
+        <form class="form-signin form-horizontal" role="form" action="addNewUser.php" method="post">
             <div class="form-group">
                 <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     Entrez votre pseudo : <br>
@@ -49,28 +49,20 @@ require_once "includes/head.php";
 
     <?php
 	// vérification que tous les champs sont remplis
-	if (empty($_POST["pseudo"]) or empty($_POST["login"]) or empty($_POST["password"])) {
+	if (empty($_POST["login"]) or empty($_POST["password"])) {
 		die("Vous devez remplir TOUS les champs !");
 	}
 	else {
 		// tous les champs sont remplis, je récupère les données
-		$pseudo = $_POST["pseudo"];
 		$login = $_POST["login"];
 		$password = $_POST["password"];
 		
-		// Connexion à la base
-		//mysql_connect("localhost","root","");
-		//mysql_select_db("projet_db");
+        // insert movie into BD
+        $stmt = $BDD->prepare('insert into Utilisateur
+        (usr_login, usr_password) values (?, ?)');
+        $stmt->execute(array($login, $password));
+        redirect("Index.php");
 
-		// Création de la requête
-		$req='INSERT INTO Utilisateur(usr_login ,usr_password) VALUES ("'.$login.'","'.$password.'");';
-
-		// Envoi de la requête
-		mysql_query($req);
-
-		// Pas de traitement
-		// Fermeture de la connexion
-		mysql_close();
 			
 		// Affichage d'un message de confirmation
 		echo 'Vous avez bien été enregistré avec le login'.$login.' et le mot de passe '.$pass;
