@@ -61,11 +61,11 @@ require_once "includes/head.php";
         $stmt = $BDD->prepare('insert into Utilisateur
         (usr_login, usr_password) values (?, ?)');
         $stmt->execute(array($login, $password));
-        redirect("Index.php");
+        redirect("index.php");
 
 			
 		// Affichage d'un message de confirmation
-		echo 'Vous avez bien été enregistré avec le login'.$login.' et le mot de passe '.$pass;
+		echo 'Vous avez bien été enregistré avec le login'.$login.' et le mot de passe '.$password;
 		echo '<br><a href="index - copie.php">Retour à l\'accueil</a>';
 		
 	}

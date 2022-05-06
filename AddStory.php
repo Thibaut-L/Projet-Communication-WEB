@@ -10,6 +10,7 @@ if (isUserConnected()) {
         $synopsis = escape($_POST['Synopsis']);
         $auteur = escape($_POST['auteur']);
         $chapter = escape($_POST['chapter']);
+        $firstChapterId= 0;
     }
 }
 ?>
@@ -23,11 +24,14 @@ if (isUserConnected()) {
 
     <body>
     <?php require_once "includes/header.php"; ?>
+    <br>
+    <br>
     <div class="container">
 
 
-        <h2 class="text-center">Ajout d'une histoire</h2>
+
         <div class="well">
+            <h2 class="text-center">Ajout d'une histoire</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
                 <input type="hidden" name="id" value="<?= $storyID ?>">
                 <div class="form-group">
@@ -53,27 +57,19 @@ if (isUserConnected()) {
                   </textarea>
                     </div>
                 </div>
-        </div>
-        <div class="well">
-            <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
-                <input type="hidden" name="id" value="<?= $storyID ?>">
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Le titre de votre histoire</label>
+                <div>
+                    <label class="col-sm-4 control-label">Le début de votre histoire</label>
                     <div class="col-sm-6">
-                        <input type="text" name="title" value="<?= $title ?>" class="form-control"
-                               placeholder="Entrez le titre de votre histoire" required autofocus>
+
+
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Synopsis</label>
-                    <div class="col-sm-6">
-                  <textarea name="shortDescription" class="form-control" placeholder="Entrez sa description courte"
-                            required>
-                    <?= $synopsis ?>
-                  </textarea>
-                    </div>
+
+
+
                 </div>
         </div>
+
+
         <br>
         <div class="form-group">
             <div class="col-sm-4 col-sm-offset-4">
@@ -81,7 +77,7 @@ if (isUserConnected()) {
                     Enregistrer votre histoire
                 </button>
             </div>
-            "
+
         </div>
         </form>
     </div>
@@ -91,15 +87,4 @@ if (isUserConnected()) {
 
     <?php require_once "includes/scripts.php"; ?>
     </body>
-
-
-    </html>
-
-<? php// } else { ?>
-    <html>
-
-    <body>
-    </body>
-
-    </html>
-<? php// } ?>
+</html>
