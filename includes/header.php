@@ -1,4 +1,5 @@
 <?php require_once "functions.php"; ?> 
+<?php require_once "includes/ConnectDB.php"; ?>
 
 
 <header class="header">
@@ -9,9 +10,11 @@
         <li><a href="index.php">Accueil</a></li>
         <?php  if (isUserConnected()){?>
             <li><a href="Src/AddStory.php">Créez votre propre histoire</a></li> 
-        <?php } ?>
-        <li><a href="login.php">Se connecter</a></li>
-  
+            <li><a href="login.php">Se déconnecter</a></li>
+        <?php }
+        else {?>
+                    <li><a href="login.php">Se connecter</a></li>
+        <?php }?>
 </ul>
 </header>
 

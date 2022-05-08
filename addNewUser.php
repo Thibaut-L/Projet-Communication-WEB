@@ -9,34 +9,37 @@ $pageTitle = "Connexion";
 require_once "includes/head.php";
 ?>   
 <body>
-    <?php require_once "includes/header.php"; ?>
-<br><br><br>
-    <div class="well">
-        <form class="form-signin form-horizontal" role="form" action="addNewUser.php" method="post">
-            <div class="form-group">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    Entrez votre pseudo : <br>
-                    <input type="text" name="pseudo" class="form-control" placeholder="Entrez votre pseudo" required>
+<?php require_once "includes/header.php"; ?>
+    <br><br><br>
+    <h2 class="text-center"><?= $pageTitle ?></h2>
+    <div class="container">
+        <div class="well">
+            <form class="form-signin form-horizontal" role="form" action="addNewUser.php" method="post">
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        Entrez votre pseudo : <br>
+                        <input type="text" name="pseudo" class="form-control" placeholder="Entrez votre pseudo" required>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    Entrez votre login : <br>
+                        <input type="text" name="login" class="form-control" placeholder="Entrez votre login" required autofocus>
+                    </div>
                 </div>
-            </div>    
-            <div class="form-group">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                Entrez votre login <br>
-                    <input type="text" name="login" class="form-control" placeholder="Entrez votre login" required autofocus>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        Entrez votre mot de passe : <br>
+                        <input type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    Entrez votre mot de passe : <br>
-                    <input type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-log-in"></span> Créer</button>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-log-in"></span> Créer</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
 
