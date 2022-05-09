@@ -5419,7 +5419,7 @@ a.list-group-item-danger.active:focus {
   padding-bottom: 75%;
 }
 .well {
-  min-height: 20px;
+  min-height: 40px;
   padding: 19px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
@@ -5433,7 +5433,7 @@ a.list-group-item-danger.active:focus {
   border-color: rgba(0, 0, 0, .15);
 }
 .well-lg {
-  padding: 24px;
+  padding: 40px;
   border-radius: 6px;
 }
 .well-sm {

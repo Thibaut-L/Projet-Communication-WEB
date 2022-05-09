@@ -30,7 +30,7 @@ if (isUserConnected()) {
 
 
 
-        <div class="well">
+        <div class="well col-lg-xl">
             <h2 class="text-center">Ajout d'une histoire</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
                 <input type="hidden" name="id" value="<?= $storyID ?>">
@@ -60,12 +60,14 @@ if (isUserConnected()) {
                 <div>
                     <label class="col-sm-4 control-label">Le début de votre histoire</label>
                     <div class="col-sm-6">
-
+                        <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required>
+                            <?= $chapter?>
+                        </textarea>
 
                     </div>
-
-
-
+                </div>
+                <div>
+                    <label
                 </div>
         </div>
 
