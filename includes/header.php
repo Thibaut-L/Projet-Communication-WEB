@@ -8,6 +8,7 @@
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
         <li><a href="index.php">Accueil</a></li>
+        <li><a href="AddStory.php">Créez votre propre histoire</a></li>
         <?php  if (isUserConnected()){?>
             <li><a href="Src/AddStory.php">Créez votre propre histoire</a></li> 
             <li><a href="login.php">Se déconnecter</a></li>
