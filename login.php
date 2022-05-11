@@ -30,6 +30,7 @@ require_once "includes/head.php";
 
 <body>
     <?php require_once "includes/header.php"; ?>
+    <?php require_once "includes/footer.php"; ?>
     <div class="container d-flex h-100">
         <br><br><br>
         <h2 class="text-center"><?= $pageTitle ?></h2>
