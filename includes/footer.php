@@ -3,6 +3,6 @@ require_once "includes/ConnectDB.php";
 ?>
 
 <footer>
-<p>Site réalisé par Thibaut Lacrois et Agathe Vianey-Liaud</p>
+<p>Site réalisé par Thibaut Lacroix et Agathe Vianey-Liaud</p>
 </footer>
 

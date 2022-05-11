@@ -57,15 +57,25 @@ require_once('includes/functions.php');
                         </textarea>
                     </div> 
                 </div>
-                <br><br> 
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-4">
-                  <button href="AddStory.php" type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
+                  <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
                 </div>
             </div>
                
                 <div>
             </div>
+        </div>
+
+
+        <br>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4">
+                <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span>
+                    Enregistrer votre histoire
+                </button>
+            </div>
+
         </div>
         </form>
     </div>
@@ -80,17 +90,16 @@ require_once('includes/functions.php');
         $title = ($_POST["title"]);
         $synopsis = ($_POST["Synopsis"]);
         $auteur = ($_POST["auteur"]);
-        $firstChapter = ($_POST['IntroductionChapter']); 
-        $_SESSION['IdPremierChapitre'] = $firstChapter; 
-        $chap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
-        $chap -> execute(array($chapID, $firstChapter));
+        $_SESSION['IdHistoire'] = $_POST['id']; 
         $story = $BDD ->prepare('insert into Histoire
         (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
         values (?, ?, ?, ?,"IMG_2611.jpeg")');
         $story->execute(array($storyID, $title, $auteur, $synopsis,));
-        
+        //redirect("index.php");
     }
-    redirect("addchapter.php");
+
+    
+
 ?>  
 
     <?php    require_once "includes/footer.php"; ?>

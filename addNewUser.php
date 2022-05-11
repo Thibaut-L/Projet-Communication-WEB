@@ -46,21 +46,22 @@ require_once "includes/head.php";
 
     <?php
 	if (isset($_SESSION['login']) AND $_SESSION['password'] != "") {
-		die('Vous êtes déjà connecté !! <a href="index - copie.php">Retour à l\'accueil</a>');
+        echo 'a';
+		//die('Vous êtes déjà connecté !! <a href="index - copie.php">Retour à l\'accueil</a>');
 	}
     ?>
 
     <?php
 	// vérification que tous les champs sont remplis
 	if (empty($_POST["login"]) or empty($_POST["password"])) {
-		die("Vous devez remplir TOUS les champs !");
+        echo 'b';
+		//die("Vous devez remplir TOUS les champs !");
 	}
 	else {
-		// tous les champs sont remplis, je récupère les données
+        echo 'c';
+        var_dump($_POST);
 		$login = $_POST["login"];
 		$password = $_POST["password"];
-		
-        // insert movie into BD
         $stmt = $BDD->prepare('insert into Utilisateur
         (usr_login, usr_password) values (?, ?)');
         $stmt->execute(array($login, $password));
