@@ -4,15 +4,13 @@ require_once "includes/functions.php";
 session_start();
 
 if (!empty($_POST['login']) and !empty($_POST['password'])) {
-    $login = $_POST['login'];
-    $password = $_POST['password'];
+    $login = escape($_POST['login']);
+    $password = escape($_POST['password']);
     $stmt = $BDD->prepare('SELECT * FROM Utilisateur WHERE usr_login=? AND usr_password=?');
     $stmt->execute(array($login, $password));
     if ($stmt->rowCount() == 1) {
         // Authentication successful
         $_SESSION['usr_login'] = $login;
-        $_SESSION['usr_password'] = $password;
-
         redirect("index.php");
     }
     else {

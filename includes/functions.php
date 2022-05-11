@@ -1,7 +1,7 @@
 <?php 
 // Check if a user is connected
 function isUserConnected() {
-    return isset($_SESSION['login']);
+    return isset($_SESSION['usr_login']);
 } 
 
 // Escape a value to prevent XSS attacks

@@ -1,4 +1,6 @@
-<?php require_once "includes/functions.php"; ?> 
+<?php require_once "includes/functions.php"; 
+session_start();
+?> 
 
 
 <!DOCTYPE html>
@@ -8,10 +10,7 @@
 
 <body>
     <?php require_once "includes/header.php"; ?>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br>
     
 <div class="wrapper">
 
