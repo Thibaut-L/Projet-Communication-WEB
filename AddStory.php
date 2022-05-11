@@ -1,6 +1,7 @@
 <?php
 require_once('includes/ConnectDB.php');
 require_once('includes/functions.php');
+ob_start();
 ?>
     <!doctype html>
     <html>
@@ -60,7 +61,7 @@ require_once('includes/functions.php');
                 <br><br> 
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-4">
-                  <button href="AddStory.php" type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
+                  <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
                 </div>
             </div>
                
@@ -75,12 +76,12 @@ require_once('includes/functions.php');
     <?php
     
     if(isset($_POST['title'])){
-         echo("c");
+        echo("c");
         var_dump($_POST);
-        $title = ($_POST["title"]);
-        $synopsis = ($_POST["Synopsis"]);
-        $auteur = ($_POST["auteur"]);
-        $firstChapter = ($_POST['IntroductionChapter']); 
+        $title = escape(($_POST["title"]));
+        $synopsis = escape(($_POST["Synopsis"]));
+        $auteur = escape(($_POST["auteur"]));
+        $firstChapter = escape(($_POST['IntroductionChapter'])); 
         $_SESSION['IdPremierChapitre'] = $firstChapter; 
         $chap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
         $chap -> execute(array($chapID, $firstChapter));
@@ -88,9 +89,9 @@ require_once('includes/functions.php');
         (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
         values (?, ?, ?, ?,"IMG_2611.jpeg")');
         $story->execute(array($storyID, $title, $auteur, $synopsis,));
-        
+        redirect("addChapter.php");
+        ob_end_flush();
     }
-    redirect("addchapter.php");
 ?>  
 
     <?php    require_once "includes/footer.php"; ?>

@@ -15,7 +15,7 @@ body{
 .well{
   background-color:rgb(255, 255, 255);
   text-align: center;
-  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  margin-top: 25%; /* poussé de la moitié de hauteur de viewport */
   margin-left: 25%;
   margin-right: 25%;
   transform: translateY(-90%);

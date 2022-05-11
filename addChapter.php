@@ -9,73 +9,45 @@ require_once('includes/functions.php');
     $pageTitle = "Ajout d'une histoire";
     require_once "includes/head.php";
     ?>
-
     <body>
     <?php require_once "includes/header.php"; ?>
+
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+
+
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
 
 
 
         <div class="well col-lg-xl">
-            <h2 class="text-center">Ajout d'une histoire</h2>
-            <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
+            <h2 class="text-center">Ajout d'un Chapitre</h2>
+            <form class="form-horizontal" role="form" enctype="multipart/form-data" action="addChapter.php" method="post">
                <!--  <input type="hidden" name="id"> --> 
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Le titre de votre histoire</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="title" class="form-control"
-                               placeholder="Entrez le titre de votre histoire" required autofocus>
-                    </div>
-                </div>
-                <div class ="form-group">
-                    <label class="col-sm-4 control-label">L'auteur de l'histoire </label>
-                    <div class="col-sm-6">
-                        <input type="text" name="auteur" class="form-control"
-                               placeholder="" required autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Synopsis</label>
-                    <div class="col-sm-6">
-                  <textarea name="Synopsis" class="form-control" placeholder="Entrez sa description courte"
-                            required>
-                  </textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-4 control-label">Image</label>
-                <div class="col-sm-4">
-                  <input type="file" name="image" />
-                </div>
-              </div>
                 <div>
-                    <label class="col-sm-4 control-label">Le début de votre histoire</label>
-                    <div class="col-sm-6">
+                    <label class="col-xl-xl control-label">Votre Chapitre /label>
+                    <div class="col-xl-xl">
                         <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required>
                         </textarea>
                     </div> 
                 </div>
+                <br>
+                <br>
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-4">
-                  <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
+                  <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Ajouter votre chapitre  </button>
                 </div>
             </div>
                
                 <div>
             </div>
-        </div>
-
-
-        <br>
-        <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-4">
-                <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span>
-                    Enregistrer votre histoire
-                </button>
-            </div>
-
         </div>
         </form>
     </div>
@@ -84,7 +56,7 @@ require_once('includes/functions.php');
 
     <?php
     
-    if(isset($_POST['title'])){
+  /*  if(isset($_POST['title'])){
          echo("c");
         var_dump($_POST);
         $title = ($_POST["title"]);
@@ -96,7 +68,7 @@ require_once('includes/functions.php');
         values (?, ?, ?, ?,"IMG_2611.jpeg")');
         $story->execute(array($storyID, $title, $auteur, $synopsis,));
         //redirect("index.php");
-    }
+    }*/
 
     
 
