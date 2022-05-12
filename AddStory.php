@@ -15,10 +15,7 @@ ob_start();
     <?php require_once "includes/header.php"; ?>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <br>
     <div class="container">
 
@@ -27,7 +24,6 @@ ob_start();
         <div class="well col-lg-xl">
             <h2 class="text-center">Ajout d'une histoire</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
-               <!--  <input type="hidden" name="id"> --> 
                 <div class="form-group">
                     <label class="col-sm-4 control-label">Le titre de votre histoire</label>
                     <div class="col-sm-6">
@@ -87,13 +83,14 @@ ob_start();
         $synopsis = escape(($_POST["Synopsis"]));
         $auteur = escape(($_POST["auteur"]));
         $firstChapter = escape(($_POST['IntroductionChapter'])); 
-        $_SESSION['IdPremierChapitre'] = $firstChapter; 
-        $chap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
-        $chap -> execute(array($chapID, $firstChapter));
+        $firstchap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
+        $firstchap -> execute(array($chapID, $firstChapter));
         $story = $BDD ->prepare('insert into Histoire
         (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
         values (?, ?, ?, ?,"IMG_2611.jpeg")');
-        $story->execute(array($storyID, $title, $auteur, $synopsis,));
+        $story->execute(array($storyID, $title, $auteur, $synopsis));
+        //$firstChapterId = $BDD -> ('insert into Lien (IdHistoire,IdPremierChapitre) value(?,?)'); 
+        //$firstChapterId -> execute(array($chapID, $storyID)); 
         redirect("addChapter.php");
         ob_end_flush();
     }
