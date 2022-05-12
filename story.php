@@ -4,23 +4,6 @@ require_once "includes/functions.php";
 session_start();
 
 $histoires = $BDD->query('select * from Histoire order by IdHistoire desc');
-
-// if (isset($_POST['Titre'])) {
-//     // the story form has been posted : retrieve story parameters
-//     $idHistoire = escape($_POST['IdHistoire']);
-//     $titre = escape($_POST['Titre']);
-//     $auteur = escape($_POST['Auteur']);
-//     $synopsis = escape($_POST['Synopsys']);
-//     $histoireImage = escape($_POST['HistoireImage']);
-        
-//     $tmpFile = $_FILES['image']['tmp_name'];
-//     if (is_uploaded_file($tmpFile)) {
-//         // upload story image
-//         $image = basename($_FILES['image']['name']);
-//         $uploadedFile = "images/$image";
-//         move_uploaded_file($_FILES['image']['tmp_name'], $uploadedFile);
-//     }
-// }
 ?>
 
 <!doctype html>
@@ -53,7 +36,7 @@ require_once "includes/header.php"; ?>
 <?php foreach ($histoires as $histoire) { ?>
     <div class="col-sm-4">
       <div class="card border-secondary mb-3" style="width: 18rem">
-        <img src="images/IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >
+      <img src="images/<?= $histoire['HistoireImage'] ?>" class="card-img-top image-rognage" alt="" >
         <div class="card-body">
           <h5 class="card-title text-center"> <?= $histoire['Titre'] ?> </h5>
         </div>
