@@ -6,7 +6,7 @@ session_start();
 <html>
 <?php require_once "includes/head.php"; ?>
 <?php require_once "includes/header.php"; ?>
-
+<title>Accueil - Les histoires dont vousêtes la protagoniste</title>
 <body>
   <div id="head">
 			<div class="row">

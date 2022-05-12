@@ -6,6 +6,7 @@ session_start();
 
 <!doctype html>
 <html>
+<title>Histoires</title>
 
 <?php 
 require_once "includes/head.php";

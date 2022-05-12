@@ -5,6 +5,7 @@ ob_start();
 ?>
     <!doctype html>
     <html>
+    <title>Ajout d'un chapitre</title>
 
     <?php
     $pageTitle = "Ajout d'une histoire";
