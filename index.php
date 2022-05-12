@@ -28,15 +28,18 @@ session_start();
   <table class="table table-sm">
         <thead>
           <tr>
+          <?php  if (isUserConnected()){ ?>
             <th><div id="head">
 			<div class="row col-6">
-				<h1 class="lead">Créer votre histoire</h1>
+				<a href="AddStory.php"><h1 class="lead"> Créer votre histoire</h1></a>
 				<p class="tagline">Liberez votre créativité, nous sommes ici pour la recueillir. </p>
 			</div>
 	</div></th>
+        <?php } ?>
+            
             <th><div id="head">
 			<div class="row col-6">
-				<h1 class="lead">Voir toutes les histoires</h1>
+				<a href="story.php"> <h1 class="lead">Voir toutes les histoires</h1></a>
 				<p class="tagline">Soyez prêts à rentrer dans l'univers extraordinaire des histoires à confectionner soit même. </p>
 			</div></th>
           </tr>

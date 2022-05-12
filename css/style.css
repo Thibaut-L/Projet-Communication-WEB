@@ -170,9 +170,10 @@ body .container{
   }
  
 footer {
+  margin-top:100;
   padding: 10px 20px;
-  background: rgb(35, 41, 93)!important;
-  color: rgb(224, 200, 200)!important;
+  background: rgb(35, 41, 93);
+  color: rgb(224, 200, 200);
   bottom: 0;
   height: 60px;
   text-align: center;
