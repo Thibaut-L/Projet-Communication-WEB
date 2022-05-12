@@ -8,7 +8,7 @@ body .container{
 }
 
 .fondimage{
-  background-image: url(../images/pastel.webp);
+  background-image: url(../images/pastel.jpeg);
   background-size: cover
 }
 
@@ -22,6 +22,10 @@ body .container{
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.table a{
+  text-decoration: none;
 }
 
 
@@ -87,11 +91,10 @@ body .container{
 
   .header :hover{
     color :rgb(255, 255, 255);
-
   }
 
-  .header .menu-btn:hover {
-    background-color:rgb(9, 12, 40);
+  .header.menu-btn:hover {
+    background-color:rgb(255, 255, 255);
   }
   
   .header .title {
@@ -107,11 +110,10 @@ body .container{
   .header .menu {
     clear: both;
     max-height: 0;
-    transition: max-height .2s ease-out;
+    transition: .2s ease-out;
   }
   
-   menu icon 
-  
+ 
   .header .menu-icon {
     cursor: pointer;
     display: inline-block;
@@ -121,7 +123,7 @@ body .container{
   }
   
   .header .menu-icon .navicon {
-    background: #333;
+    background: rgb(255, 255, 255);
     display: block;
     height: 2px;
     position: relative;
@@ -129,9 +131,8 @@ body .container{
     width: 18px;
   }
   
-  .header .menu-icon .navicon:before,
-  .header .menu-icon .navicon:after {
-    background: #333;
+  .header .menu-icon .navicon:before,.header .menu-icon .navicon:after {
+    background: rgb(255, 255, 255);
     content: '';
     display: block;
     height: 100%;
