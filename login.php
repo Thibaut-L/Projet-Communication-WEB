@@ -22,9 +22,10 @@ if (!empty($_POST['login']) and !empty($_POST['password'])) {
 
 <!doctype html>
 <html>
+<title>Connexion</title>
 
 <?php 
-$pageTitle = "Veuillez vous identifier avant tout!";
+$pageTitle="Connexion";
 require_once "includes/head.php";
 ?>
     

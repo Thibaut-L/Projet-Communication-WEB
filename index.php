@@ -6,7 +6,7 @@
 <html>
 <?php require_once "includes/head.php"; ?>
 <?php require_once "includes/header.php"; ?>
-
+<title>Accueil</title>
 <body>
   <div id="head">
 			<div class="row">
@@ -20,7 +20,7 @@
 		<h2 class="thin">Nous vous proposons de passer un excellent moment en découvrant "Les histoires dont vous êtes la protagoniste".</h2>
 		<p class="text-muted">
 			Vous pouvez lire, créer ou même modifier vos propres histoires!<br> 
-			N'attendez plus et inscrivez vous juste ici pour vivre une experience hors du commun.
+			N'attendez plus et inscrivez vous juste <a href="addNewUser.php">ici</a> pour vivre une experience hors du commun.
 		</p>
 	</div>
   <br>

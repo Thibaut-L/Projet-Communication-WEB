@@ -7,8 +7,12 @@ body .container{
   margin-right: 10%!important;
 }
 
+body h1 {
+  color: black;
+}
+
 .fondimage{
-  background-image: url(../images/pastel.webp);
+  background-image: url(../images/pastel.jpeg);
   background-size: cover
 }
 
@@ -24,8 +28,12 @@ body .container{
   z-index: 1;
 }
 
+.table a{
+  text-decoration: none;
+}
 
-#head { background:#181015 url(../images/IMG_2611.jpeg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
+
+#head { background:#181015 url(../images/pastel.jpeg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
 #head.secondary { height:100px; min-height: 100px; padding-top:0px; }
 	#head .lead { font-family:"Open sans", Helvetica, Arial; font-size:44px; margin-bottom:6px; color:white; line-height:1.15em; } 
 	#head .tagline { color:rgba(255,255,255,0.75); margin-bottom:25px; }
@@ -87,11 +95,10 @@ body .container{
 
   .header :hover{
     color :rgb(255, 255, 255);
-
   }
 
-  .header .menu-btn:hover {
-    background-color:rgb(9, 12, 40);
+  .header.menu-btn:hover {
+    background-color:rgb(255, 255, 255);
   }
   
   .header .title {
@@ -107,11 +114,10 @@ body .container{
   .header .menu {
     clear: both;
     max-height: 0;
-    transition: max-height .2s ease-out;
+    transition: .2s ease-out;
   }
   
-   menu icon 
-  
+ 
   .header .menu-icon {
     cursor: pointer;
     display: inline-block;
@@ -121,7 +127,7 @@ body .container{
   }
   
   .header .menu-icon .navicon {
-    background: #333;
+    background: rgb(255, 255, 255);
     display: block;
     height: 2px;
     position: relative;
@@ -129,9 +135,8 @@ body .container{
     width: 18px;
   }
   
-  .header .menu-icon .navicon:before,
-  .header .menu-icon .navicon:after {
-    background: #333;
+  .header .menu-icon .navicon:before,.header .menu-icon .navicon:after {
+    background: rgb(255, 255, 255);
     content: '';
     display: block;
     height: 100%;

@@ -3,11 +3,13 @@
 
 <!DOCTYPE html>
 <html>
+<title>Création de compte</title>
 
 <?php 
-$pageTitle = "Connexion";
+$pageTitle = "Inscription";
 require_once "includes/head.php";
 ?>   
+
 <body class="fondimage" >
 <?php require_once "includes/header.php"; ?>
     <br><br><br>
