@@ -11,18 +11,18 @@ ob_start();
     require_once "includes/head.php";
     ?>
 
-    <body>
+    <body class="fondimage">
     <?php require_once "includes/header.php"; ?>
     <br>
     <br>
     
     <br>
     <br><br><br><br><br><br>
-    <div class="container">
+    <div class="container" >
 
 
 
-        <div class="well col-lg-xl">
+        <div class="well col-lg-xl" id="blackground">
             <h2 class="text-center">Ajout d'une histoire</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
                 <div class="form-group">

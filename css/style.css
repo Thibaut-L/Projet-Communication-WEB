@@ -7,6 +7,24 @@ body .container{
   margin-right: 10%!important;
 }
 
+.fondimage{
+  background-image: url(../images/pastel.webp);
+  background-size: cover
+}
+
+#blackground {
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+#blackgroundcontainer {
+  background: rgba(255, 255, 255, 0.2);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+
 #head { background:#181015 url(../images/IMG_2611.jpeg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
 #head.secondary { height:100px; min-height: 100px; padding-top:0px; }
 	#head .lead { font-family:"Open sans", Helvetica, Arial; font-size:44px; margin-bottom:6px; color:white; line-height:1.15em; } 
@@ -26,7 +44,9 @@ body .container{
   height: 240px;
   overflow: hidden;
   }
-  
+
+
+
 .well{
   background-color:rgb(255, 255, 255);
   text-align: center;
@@ -38,11 +58,11 @@ body .container{
   }
   
   header a{
-    color: rgb(113, 17, 17);
+    color: white;
   }
   .header {
-    background-color: rgb(224, 200, 200);
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    background-color: rgb(21, 16, 62);
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -53,7 +73,7 @@ body .container{
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: rgb(224, 200, 200);
+    background-color: rgb(21, 16, 62);
   }
   
   .header li a {
@@ -62,7 +82,7 @@ body .container{
     text-decoration: none;
   }
   .header li :hover{
-    background-color:rgb(113, 17, 17);
+    background-color:rgb(9, 12, 40);
   }
 
   .header :hover{
@@ -71,7 +91,7 @@ body .container{
   }
 
   .header .menu-btn:hover {
-    background-color:rgb(136, 19, 19);
+    background-color:rgb(9, 12, 40);
   }
   
   .header .title {

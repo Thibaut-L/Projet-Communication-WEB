@@ -11,19 +11,27 @@ session_start();
 require_once "includes/head.php";
 require_once "includes/header.php"; ?>
 
-<body>
+<body class="fondimage" >
 
-<div class="container text-center">
-		<br> <br>
-        <br> <br>
-		<h2 class="thin">Vous trouverez ci dessous une liste non exhaustive de tous les chefs d'oeuvres du moment.</h2>
-		<p class="text-muted">
-			Régalez vous!<br> 
-			Laissez vos retours à l'adresse suivant : thibautEstUnBG@ksos.wtf
-		</p>
-	</div>
-  <br>
-    <div class="container d-flex flex-column align-items-center row "> 
+<main id="blackground">
+
+</main>
+
+<div class="container text-center " id="blackground">
+	<br> <br>
+    <br> <br>
+	<h2 class="thin">Vous trouverez ci dessous une liste non exhaustive de tous les chefs d'oeuvres du moment.</h2>
+	<p class="text-muted">
+		Régalez vous!<br> 
+		Laissez vos retours à l'adresse suivant : thibautEstUnBG@ksos.wtf <br>
+        <?php  if (isUserConnected()){ ?>
+            Créez dès maintenant vos propres histoires <a href="AddStory.php">ici</a>!
+        <?php } ?>
+        
+	</p>
+    <br><br>
+</div>
+<div class="container d-flex flex-column align-items-center row " id="blackground"> 
     <div class="col-sm-4">
       <div class="card border-secondary mb-3" style="width: 18rem">
         <img src="images/IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >

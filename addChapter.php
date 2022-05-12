@@ -10,7 +10,7 @@ ob_start();
     $pageTitle = "Ajout d'une histoire";
     require_once "includes/head.php";
     ?>
-    <body>
+    <body class="fondimage">
     <?php require_once "includes/header.php"; ?>
 
     <br>
@@ -20,9 +20,9 @@ ob_start();
     <br>
 
 
-    <div class="container">
+    <div class="container" >
         <br>
-        <div class="well col-lg-xl">
+        <div class="well col-lg-xl" id="blackground">
             <h2 class="text-center">Ajout d'un Chapitre</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="addChapter.php" method="post">
                 <div>

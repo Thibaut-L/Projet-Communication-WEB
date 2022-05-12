@@ -8,12 +8,12 @@
 $pageTitle = "Connexion";
 require_once "includes/head.php";
 ?>   
-<body>
+<body class="fondimage" >
 <?php require_once "includes/header.php"; ?>
     <br><br><br>
     <h2 class="text-center"><?= $pageTitle ?></h2>
-    <div class="container">
-        <div class="well">
+    <div class="container" >
+        <div class="well"id="blackground">
             <form class="form-signin form-horizontal" role="form" action="addNewUser.php" method="post">
                 <div class="form-group">
                     <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">

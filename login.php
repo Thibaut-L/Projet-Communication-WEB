@@ -29,7 +29,7 @@ require_once "includes/head.php";
 ?>
     
 
-<body>
+<body class="fondimage">
 <?php require_once "includes/header.php"; ?>
     <div class="container d-flex h-100">
         <br><br><br>
@@ -41,7 +41,7 @@ require_once "includes/head.php";
             </div>
         <?php } ?>
 
-        <div class="well row align-self-center">
+        <div class="well row align-self-center" id="blackgroundcontainer">
             <form class="form-signin form-horizontal" role="form" action="login.php" method="post">
                 <div class="form-group">
                     <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
