@@ -1,18 +1,7 @@
 <?php
+require_once('includes/ConnectDB.php');
 require_once('includes/functions.php');
-session_start();
-if (isUserConnected()) {
-    if (isset($_POST['title'])) {
-        $title = escape($_POST['title']);
-        $storyID = escape($_POST['StoryID']);
-        $chapterText = escape($_POST['chapterText']);
-        $chapterId = escape($_POST['chapterId']);
-        $synopsis = escape($_POST['Synopsis']);
-        $auteur = escape($_POST['auteur']);
-        $chapter = escape($_POST['chapter']);
-        $firstChapterId= 0;
-    }
-}
+ob_start();
 ?>
     <!doctype html>
     <html>
@@ -38,59 +27,80 @@ if (isUserConnected()) {
         <div class="well col-lg-xl">
             <h2 class="text-center">Ajout d'une histoire</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
-                <input type="hidden" name="id" value="<?= $storyID ?>">
+               <!--  <input type="hidden" name="id"> --> 
                 <div class="form-group">
                     <label class="col-sm-4 control-label">Le titre de votre histoire</label>
                     <div class="col-sm-6">
-                        <input type="text" name="title" value="<?= $title ?>" class="form-control"
+                        <input type="text" name="title" class="form-control"
                                placeholder="Entrez le titre de votre histoire" required autofocus>
                     </div>
                 </div>
                 <div class ="form-group">
                     <label class="col-sm-4 control-label">L'auteur de l'histoire </label>
                     <div class="col-sm-6">
-                        <input type="text" name="title" value="<?= $auteur  ?>" class="form-control"
+                        <input type="text" name="auteur" class="form-control"
                                placeholder="" required autofocus>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-4 control-label">Synopsis</label>
                     <div class="col-sm-6">
-                  <textarea name="shortDescription" class="form-control" placeholder="Entrez sa description courte"
+                  <textarea name="Synopsis" class="form-control" placeholder="Entrez sa description courte"
                             required>
-                    <?= $synopsis ?>
                   </textarea>
                     </div>
                 </div>
+                <div class="form-group">
+                <label class="col-sm-4 control-label">Image</label>
+                <div class="col-sm-4">
+                  <input type="file" name="image" />
+                </div>
+              </div>
                 <div>
                     <label class="col-sm-4 control-label">Le début de votre histoire</label>
                     <div class="col-sm-6">
                         <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required>
-                            <?= $chapter?>
                         </textarea>
-
-                    </div>
+                    </div> 
                 </div>
-                <div>
-                    <label
+                <br><br> 
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-4">
+                  <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
                 </div>
-        </div>
-
-
-        <br>
-        <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-4">
-                <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span>
-                    Enregistrer votre histoire
-                </button>
             </div>
-
+               
+                <div>
+            </div>
         </div>
         </form>
     </div>
 
     </div>
-    <?php require_once "includes/footer.php"; ?>
+
+    <?php
+    
+    if(isset($_POST['title'])){
+        echo("c");
+        var_dump($_POST);
+        $title = escape(($_POST["title"]));
+        $synopsis = escape(($_POST["Synopsis"]));
+        $auteur = escape(($_POST["auteur"]));
+        $firstChapter = escape(($_POST['IntroductionChapter'])); 
+        $_SESSION['IdPremierChapitre'] = $firstChapter; 
+        $chap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
+        $chap -> execute(array($chapID, $firstChapter));
+        $story = $BDD ->prepare('insert into Histoire
+        (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
+        values (?, ?, ?, ?,"IMG_2611.jpeg")');
+        $story->execute(array($storyID, $title, $auteur, $synopsis,));
+        redirect("addChapter.php");
+        ob_end_flush();
+    }
+?>  
+
+    <?php    require_once "includes/footer.php"; ?>
     <?php require_once "includes/scripts.php"; ?>
+
     </body>
 </html>
