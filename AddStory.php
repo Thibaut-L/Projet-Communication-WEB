@@ -3,100 +3,108 @@ require_once('includes/ConnectDB.php');
 require_once('includes/functions.php');
 ob_start();
 ?>
-    <!doctype html>
-    <html>
+<!doctype html>
+<html>
 
-    <?php
-    $pageTitle = "Ajout d'une histoire";
-    require_once "includes/head.php";
-    ?>
+<?php
+$pageTitle = "Ajout d'une histoire";
+require_once "includes/head.php";
+?>
 
-    <body class="fondimage">
-    <?php require_once "includes/header.php"; ?>
-    <br>
-    <br>
-    
-    <br>
-    <br><br><br><br><br><br>
-    <div class="container" >
+<body class="fondimage">
+<?php require_once "includes/header.php"; ?>
+<br>
+<br>
+
+<br>
+<br><br><br><br><br><br>
+<div class="container">
 
 
-
-        <div class="well col-lg-xl" id="blackground">
-            <h2 class="text-center">Ajout d'une histoire</h2>
-            <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Le titre de votre histoire</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="title" class="form-control"
-                               placeholder="Entrez le titre de votre histoire" required autofocus>
-                    </div>
+    <div class="well col-lg-xl" id="blackground">
+        <h2 class="text-center">Ajout d'une histoire</h2>
+        <form class="form-horizontal" role="form" enctype="multipart/form-data" action="AddStory.php" method="post">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Le titre de votre histoire</label>
+                <div class="col-sm-6">
+                    <input type="text" name="title" class="form-control"
+                           placeholder="Entrez le titre de votre histoire" required autofocus>
                 </div>
-                <div class ="form-group">
-                    <label class="col-sm-4 control-label">L'auteur de l'histoire </label>
-                    <div class="col-sm-6">
-                        <input type="text" name="auteur" class="form-control"
-                               placeholder="" required autofocus>
-                    </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">L'auteur de l'histoire </label>
+                <div class="col-sm-6">
+                    <input type="text" name="auteur" class="form-control"
+                           placeholder="" required autofocus>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Synopsis</label>
-                    <div class="col-sm-6">
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Synopsis</label>
+                <div class="col-sm-6">
                   <textarea name="Synopsis" class="form-control" placeholder="Entrez sa description courte"
                             required></textarea>
-                    </div>
                 </div>
-                <div class="form-group">
+            </div>
+            <div class="form-group">
                 <label class="col-sm-4 control-label">Image</label>
                 <div class="col-sm-4">
-                  <input type="file" name="image" />
+                    <input type="file" name="image"/>
                 </div>
-              </div>
-                <div>
-                    <label class="col-sm-4 control-label">Le début de votre histoire</label>
-                    <div class="col-sm-6">
-                        <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required></textarea>
-                    </div> 
+            </div>
+            <div>
+                <label class="col-sm-4 control-label">Le déébut de votre histoire</label>
+                <div class="col-sm-6">
+                    <textarea name="IntroductionChapter" class="form-control"
+                              placeholder="Entrez ici le début de votre histoire" required></textarea>
                 </div>
-                <br><br> 
+            </div>
+            <br><br>
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-4">
-                  <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer votre histoire </button>
+                    <button type="submit" class="btn btn-default btn-primary"><span
+                                class="glyphicon glyphicon-save"></span> Enregistrer votre histoire
+                    </button>
                 </div>
             </div>
-               
-                <div>
+
+            <div>
             </div>
-        </div>
-        </form>
     </div>
+    </form>
+</div>
 
-    </div>
+</div>
 
-    <?php
-    
-    if(isset($_POST['title'])){
-        echo("c");
-        var_dump($_POST);
-        $title = escape(($_POST["title"]));
-        $synopsis = escape(($_POST["Synopsis"]));
-        $auteur = escape(($_POST["auteur"]));
-        $firstChapter = escape(($_POST['IntroductionChapter'])); 
-        $firstchap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
-        $firstchap -> execute(array($chapID, $firstChapter));
-        $story = $BDD ->prepare('insert into Histoire
+<?php
+
+if (isset($_POST['title'])) {
+    echo("c");
+    var_dump($_POST);
+
+
+    $_SESSION['Histoire'] = $_POST["title"];
+    $title = escape(($_POST["title"]));
+    $synopsis = escape(($_POST["Synopsis"]));
+    $auteur = escape(($_POST["auteur"]));
+    $firstChapter = escape(($_POST['IntroductionChapter']));
+    $firstchap = $BDD->prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)');
+    $firstchap->execute(array($chapID, $firstChapter));
+    $story = $BDD->prepare('insert into Histoire
         (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
         values (?, ?, ?, ?,"IMG_2611.jpeg")');
-        $story->execute(array($storyID, $title, $auteur, $synopsis));
-        //$firstChapterId = $BDD -> ('insert into Lien (IdHistoire,IdPremierChapitre) value(?,?)'); 
-        //$firstChapterId -> execute(array($chapID, $storyID)); 
-        redirect("addChapter.php");
-        ob_end_flush();
-    }
-?>  
+    $story->execute(array($storyID, $title, $auteur, $synopsis));
 
-    <?php    require_once "includes/footer.php"; ?>
-    <?php require_once "includes/scripts.php"; ?>
+    $stmt = $BDD->query('SELECT * FROM Chapitre WHERE IdChapitre=(SELECT MAX(IdChapitre) FROM Chapitre)');
+    $firstChapterId = ($stmt->fetchColumn());
+    $addFirstChapterId = $BDD->prepare('insert into Lien (IdHistoire,IdPremierChapitre) value (?,?)');
+    $addFirstChapterId->execute(array($histoireID, $firstChapterId));
+    redirect("addChapter.php");
+    ob_end_flush();
+}
+?>
 
-    </body>
+<?php require_once "includes/footer.php"; ?>
+<?php require_once "includes/scripts.php"; ?>
+
+</body>
 </html>
