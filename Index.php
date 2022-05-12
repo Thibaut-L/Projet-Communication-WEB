@@ -5,93 +5,46 @@ session_start();
 <!DOCTYPE html>
 <html>
 <?php require_once "includes/head.php"; ?>
-
 <?php require_once "includes/header.php"; ?>
 
 <body>
-  coucou ca ne s'affiche pas ca me tend 
-  <br><br><br><br>
-
-
-
+  <div id="head">
+			<div class="row">
+				<h1 class="lead">Les histoires dont vous êtes la protagoniste</h1>
+				<p class="tagline">Soyez prêts à rentrer dans l'univers extraordinaire des histoires à confectionner soit même. </p>
+			</div>
+	</div>
+  <br>
+  <div class="container text-center">
+		<br> <br>
+		<h2 class="thin">Nous vous proposons de passer un excellent moment en découvrant "Les histoires dont vous êtes la protagoniste".</h2>
+		<p class="text-muted">
+			Vous pouvez lire, créer ou même modifier vos propres histoires!<br> 
+			N'attendez plus et inscrivez vous juste ici pour vivre une experience hors du commun.
+		</p>
+	</div>
+  <br>
   
-  <div class="container d-flex flex-column align-items-center row "> 
-    <div class="col-sm-4">
-      <div class="card border-secondary mb-3" style="width: 18rem ">
-        <img src="IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >
-        <div class="card-body">
-          <h5 class="card-title text-center"> *inserer le titre avec la session*</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Auteur : *inserer l'auteur avec la session*</li>
-          <li class="list-group-item">Synospis :  *inserer le synopsis avec la session*</li>
-        </ul>
-        <div class="card-body text-center">
-          <a href="story.php" class="card-link ">Commencer l'histoire</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem ">
-        <img src="IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >
-        <div class="card-body">
-          <h5 class="card-title text-center"> *inserer le titre avec la session*</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Auteur : *inserer l'auteur avec la session*</li>
-          <li class="list-group-item">Synospis :  *inserer le synopsis avec la session*</li>
-        </ul>
-        <div class="card-body text-center">
-          <a href="#" class="card-link ">Commencer l'histoire</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem ">
-        <img src="IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >
-        <div class="card-body">
-          <h5 class="card-title text-center"> *inserer le titre avec la session*</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Auteur : *inserer l'auteur avec la session*</li>
-          <li class="list-group-item">Synospis :  *inserer le synopsis avec la session*</li>
-        </ul>
-        <div class="card-body text-center">
-          <a href="#" class="card-link ">Commencer l'histoire</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem ">
-        <img src="IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >
-        <div class="card-body">
-          <h5 class="card-title text-center"> *inserer le titre avec la session*</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Auteur : *inserer l'auteur avec la session*</li>
-          <li class="list-group-item">Synospis :  *inserer le synopsis avec la session*</li>
-        </ul>
-        <div class="card-body text-center">
-          <a href="#" class="card-link ">Commencer l'histoire</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem ">
-        <img src="IMG_2611.jpeg" class="card-img-top image-rognage" alt="" >
-        <div class="card-body">
-          <h5 class="card-title text-center"> *inserer le titre avec la session*</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Auteur : *inserer l'auteur avec la session*</li>
-          <li class="list-group-item">Synospis :  *inserer le synopsis avec la session*</li>
-        </ul>
-        <div class="card-body text-center">
-          <a href="#" class="card-link ">Commencer l'histoire</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <table class="table table-sm">
+        <thead>
+          <tr>
+            <th><div id="head">
+			<div class="row col-6">
+				<h1 class="lead">Créer votre histoire</h1>
+				<p class="tagline">Liberez votre créativité, nous sommes ici pour la recueillir. </p>
+			</div>
+	</div></th>
+            <th><div id="head">
+			<div class="row col-6">
+				<h1 class="lead">Voir toutes les histoires</h1>
+				<p class="tagline">Soyez prêts à rentrer dans l'univers extraordinaire des histoires à confectionner soit même. </p>
+			</div></th>
+          </tr>
+        </thead>
+</table>
+        
+
+
 
   
   <?php require_once "includes/footer.php"; ?>

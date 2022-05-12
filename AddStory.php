@@ -20,6 +20,7 @@ ob_start();
     <br>
     <br>
     <br>
+    <br><br><br><br><br><br>
     <div class="container">
 
 
@@ -46,8 +47,7 @@ ob_start();
                     <label class="col-sm-4 control-label">Synopsis</label>
                     <div class="col-sm-6">
                   <textarea name="Synopsis" class="form-control" placeholder="Entrez sa description courte"
-                            required>
-                  </textarea>
+                            required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -59,8 +59,7 @@ ob_start();
                 <div>
                     <label class="col-sm-4 control-label">Le début de votre histoire</label>
                     <div class="col-sm-6">
-                        <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required>
-                        </textarea>
+                        <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required></textarea>
                     </div> 
                 </div>
                 <br><br> 
@@ -88,14 +87,14 @@ ob_start();
         $auteur = escape(($_POST["auteur"]));
         $firstChapter = escape(($_POST['IntroductionChapter'])); 
         $_SESSION['IdPremierChapitre'] = $firstChapter; 
-        $chap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
-        $chap -> execute(array($chapID, $firstChapter));
+        $chap = $BDD -> prepare('insert into Chapitre (Contenu) values(?)'); 
+        $chap -> execute(array($firstChapter));
         $story = $BDD ->prepare('insert into Histoire
-        (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
-        values (?, ?, ?, ?,"IMG_2611.jpeg")');
-        $story->execute(array($storyID, $title, $auteur, $synopsis,));
-        redirect("addChapter.php");
-        ob_end_flush();
+        (Titre, Auteur ,Synopsis,HistoireImage)
+        values (?, ?, ?,"../images/IMG_2611.jpeg")');
+        $story->execute(array($title, $auteur, $synopsis));
+        //redirect("addChapter.php");
+        //ob_end_flush();
     }
 ?>  
 
