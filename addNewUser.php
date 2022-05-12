@@ -6,7 +6,7 @@
 <title>Création de compte</title>
 
 <?php 
-$pageTitle = "Connexion";
+$pageTitle = "Inscription";
 require_once "includes/head.php";
 ?>   
 
