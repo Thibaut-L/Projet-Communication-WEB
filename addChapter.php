@@ -1,6 +1,7 @@
 <?php
 require_once('includes/ConnectDB.php');
 require_once('includes/functions.php');
+ob_start(); 
 ?>
     <!doctype html>
     <html>
@@ -21,54 +22,39 @@ require_once('includes/functions.php');
 
     <div class="container">
         <br>
-        <br>
-        <br>
-        <br>
-
-
-
         <div class="well col-lg-xl">
             <h2 class="text-center">Ajout d'un Chapitre</h2>
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="addChapter.php" method="post">
-               <!--  <input type="hidden" name="id"> --> 
                 <div>
-                    <label class="col-xl-xl control-label">Votre Chapitre /label>
+                    <label class="col-xl-xl control-label">Votre Chapitre </label>
                     <div class="col-xl-xl">
-                        <textarea name="IntroductionChapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required>
+                        <textarea name="Chapter" class ="form-control" placeholder="Entrez ici le début de votre histoire" required>
                         </textarea>
                     </div> 
                 </div>
                 <br>
                 <br>
             <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
+                <div class="col-sm-4 col-sm-offset-3">
                   <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Ajouter votre chapitre  </button>
                 </div>
             </div>
+            <a href="addChoix.php"> Terminer l'ajout des chapitres </a>
                
-                <div>
-            </div>
         </div>
-        </form>
-    </div>
-
+         </form> 
     </div>
 
     <?php
     
-  /*  if(isset($_POST['title'])){
-         echo("c");
+    if(isset($_POST['Chapter'])){
         var_dump($_POST);
-        $title = ($_POST["title"]);
-        $synopsis = ($_POST["Synopsis"]);
-        $auteur = ($_POST["auteur"]);
-        $_SESSION['IdHistoire'] = $_POST['id']; 
-        $story = $BDD ->prepare('insert into Histoire
-        (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
-        values (?, ?, ?, ?,"IMG_2611.jpeg")');
-        $story->execute(array($storyID, $title, $auteur, $synopsis,));
-        //redirect("index.php");
-    }*/
+        $contenu = $_POST['Chapter']; 
+        $chapter = $BDD ->prepare('insert into Chapitre
+        (IdChapitre,Contenu) values (?,?');
+        $chapter = $BDD -> execute(array($chapID,$contenu)); 
+        ob_end_flush(); 
+    }
 
     
 
