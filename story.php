@@ -45,7 +45,7 @@ require_once "includes/header.php"; ?>
           <li class="list-group-item">Synospis :  <?= $histoire['Synopsis'] ?></li>
         </ul>
         <div class="card-body text-center">
-          <a href="story.php" class="card-link ">Commencer l'histoire</a>
+          <a href="specificstory.php" class="card-link">Commencer l'histoire</a>
         </div>
       </div>
     </div>
