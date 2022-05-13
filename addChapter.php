@@ -8,7 +8,7 @@ require_once('includes/functions.php');
 ?>
 
 <!doctype html>
-<html>
+<html lang = "fr">
 
 <?php
 $pageTitle = "Ajout d'une histoire";

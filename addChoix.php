@@ -6,7 +6,7 @@ ob_start();
 
 
 <!doctype html>
-<html>
+<html lang = "fr">
 
 
 <body class="fondimage">

@@ -2,7 +2,7 @@
 <?php require_once "includes/ConnectDB.php"; ?>
 
 <!DOCTYPE html>
-<html>
+<html lang = "fr">
 <title>Création de compte</title>
 
 <?php 

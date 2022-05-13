@@ -21,7 +21,7 @@ if (!empty($_POST['login']) and !empty($_POST['password'])) {
 ?>
 
 <!doctype html>
-<html>
+<html lang = "fr">
 <title>Connexion</title>
 
 <?php 

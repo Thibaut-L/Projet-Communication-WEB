@@ -4,7 +4,7 @@ require_once('includes/functions.php');
 ob_start();
 ?>
     <!doctype html>
-    <html>
+    <html lang = "fr">
 
     <?php
     $pageTitle = "Ajout d'une histoire";
@@ -92,7 +92,7 @@ ob_start();
         $addLien -> execute(array($idHistoire, $FirstChapterId));
         $story = $BDD ->prepare('insert into Histoire
         (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
-        values (?, ?, ?, ?,"IMG_2611.jpeg")');
+        values (?, ?, ?, ?,"histoire.webp")');
         $story->execute(array($storyID, $title, $auteur, $synopsis));
         redirect("addChapter.php");
         ob_end_flush();
