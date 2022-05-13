@@ -4,6 +4,7 @@ require_once "includes/functions.php";
 session_start();
 
 $histoires = $BDD->query('select * from Histoire order by IdHistoire desc');
+
 ?>
 
 <!doctype html>
@@ -33,7 +34,11 @@ require_once "includes/header.php"; ?>
 
 
 <div class="container d-flex flex-column align-items-center row " id="blackground"> 
-<?php foreach ($histoires as $histoire) { ?>
+<?php foreach ($histoires as $histoire) {
+
+
+
+    ?>
     <div class="col-sm-4">
       <div class="card border-secondary mb-3" style="width: 18rem">
       <img src="images/<?= $histoire['HistoireImage'] ?>" class="card-img-top image-rognage" alt="" >
@@ -45,7 +50,10 @@ require_once "includes/header.php"; ?>
           <li class="list-group-item">Synospis :  <?= $histoire['Synopsis'] ?></li>
         </ul>
         <div class="card-body text-center">
-          <a href="specificstory.php" class="card-link">Commencer l'histoire</a>
+          <a href="specificstory.php?idHistoire=<?php echo $histoire['IdHistoire'];?><?php  $idStory = $histoire['IdHistoire'];
+          $firstChapIdReq = $BDD ->prepare('SELECT IdPremierChapitre FROM Lien WHERE IdHistoire=?');
+          $firstChapIdReq -> execute(array($idStory));
+          $firstChapId = $firstChapIdReq -> fetchColumn();?>&IdChapitre=<?php echo $firstChapId;?>" class="card-link"> Commencer l'histoire</a>
         </div>
       </div>
     </div>

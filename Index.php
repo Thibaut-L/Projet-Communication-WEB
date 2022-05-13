@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <?php require_once "includes/head.php"; ?>
-<?php require_once "includes/header.php"; ?>
+<?php require_once "includes/header.php";
+unset($_SESSION['Histoire']);
+?>
 <title>Accueil</title>
 <body>
   <div id="head">

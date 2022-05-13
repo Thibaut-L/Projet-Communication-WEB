@@ -35,7 +35,6 @@ $firstChapterId = ($getFirstChapterId->fetchColumn());
 echo($firstChapterId);
 $idDifference = $lastChapterId - $firstChapterId;
 echo($idDifference);
-
 ?>
 <br>
 <br>
@@ -47,30 +46,31 @@ echo($idDifference);
 <div class="container">
     <br>
     <div class="well col-lg-xl" id="blackground">
-        <h2 class="text-center">Ajout d'un Chapitre</h2>
+        <h2 class="text-center">Ajout d'un lien </h2>
         <form class="form-horizontal" role="form" enctype="multipart/form-data" action="addChoix.php" method="post">
             <div class="dropdown">
                 <select Name='ddlSelectParaEntrant'>
-                    <option value="">--- Select ---</option>
+                    <option value="">--- Paragraphe Entrant ---</option>
 
                     <?php
-                    for ($x = 1; $x <= $idDifference; $x++) {
-                        echo '<option value="' . $x . '">' . $x . '</option>';
+                    for ($x =  1; $x <= $idDifference +1 ; $x++) {
+                        $storedValue= ($firstChapterId+$x)-1;
+                        echo '<option value="' . $storedValue . '">' . $x . '</option>';
                     }
                     ?>
                 </select>
                 <br>
                 <div class="col-sm-sm">
-                    <textarea name="Chapter" class="form-control" placeholder="Entrez le contenu de votre choix ici"
-                              required></textarea>
+                    <textarea name="Chapter" class="form-control" placeholder="Entrez le contenu de votre choix ici" required></textarea>
                 </div>
 
                 <select Name='ddlSelectParaSortant'>
-                    <option value="">--- Select ---</option>
+                    <option value="">--- Paragraphe Sortant ---</option>
 
                     <?php
-                    for ($x = 1; $x <= $idDifference; $x++) {
-                        echo '<option value="' . $x . '">' . $x . '</option>';
+                    for ($y = 1; $y <= $idDifference+1; $y++) {
+                        $storedValueSortant = ($firstChapterId+$y)-1;
+                        echo '<option value="' . $storedValueSortant . '">' . $y . '</option>';
                     }
                     ?>
                 </select>

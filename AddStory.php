@@ -78,18 +78,22 @@ ob_start();
     if(isset($_POST['title'])){
         echo("c");
         var_dump($_POST);
+        $_SESSION["Histoire"]= $_POST["title"];
         $title = escape(($_POST["title"]));
         $synopsis = escape(($_POST["Synopsis"]));
         $auteur = escape(($_POST["auteur"]));
         $firstChapter = escape(($_POST['IntroductionChapter'])); 
         $firstchap = $BDD -> prepare('insert into Chapitre (IdChapitre,Contenu) values(?,?)'); 
         $firstchap -> execute(array($chapID, $firstChapter));
+        $stmt = $BDD->query('SELECT * FROM Chapitre WHERE IdChapitre=(SELECT MAX(IdChapitre) FROM Chapitre)');
+        $FirstChapterId = ($stmt->fetchColumn());
+        echo($FirstChapterId);
+        $addLien = $BDD -> prepare('INSERT INTO Lien (IdHistoire,IdPremierChapitre) values(?,?)');
+        $addLien -> execute(array($idHistoire, $FirstChapterId));
         $story = $BDD ->prepare('insert into Histoire
         (IdHistoire, Titre, Auteur ,Synopsis,HistoireImage)
         values (?, ?, ?, ?,"IMG_2611.jpeg")');
         $story->execute(array($storyID, $title, $auteur, $synopsis));
-        //$firstChapterId = $BDD -> ('insert into Lien (IdHistoire,IdPremierChapitre) value(?,?)'); 
-        //$firstChapterId -> execute(array($chapID, $storyID)); 
         redirect("addChapter.php");
         ob_end_flush();
     }

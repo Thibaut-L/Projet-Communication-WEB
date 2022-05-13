@@ -3,6 +3,9 @@ require_once('includes/ConnectDB.php');
 require_once('includes/functions.php');
 ?>
 
+<?php
+
+?>
 
 <!doctype html>
 <html>
@@ -34,8 +37,12 @@ require_once "includes/head.php";
                 </div>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Lose" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault"> Chapitre de défaite </label>
+                <input class="form-check-input" type="checkbox" name="Lose" value="1" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault"> Ceci est un chapitre de défaite </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Win" value="1" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault"> Ceci est un chapitre de victoire </label>
             </div>
             <br>
             <br>
@@ -57,11 +64,12 @@ require_once "includes/head.php";
 
 if (isset($_POST['Chapter'])) {
     var_dump($_POST);
+    $chapVictoire =$_POST['Win'];
     $chapDefaite = $_POST['Lose'];
     $contenu = $_POST['Chapter'];
     $chapter = $BDD->prepare('insert into Chapitre
-        (IdChapitre,Contenu) values (?,?)');
-    $chapter->execute(array($chapID, $contenu));
+        (IdChapitre,Contenu,ChapDéfaite, chapVictoire ) values (?,?,?,?)');
+    $chapter->execute(array($chapID, $contenu,$chapDefaite,$chapVictoire));
 }
 ?>
 
