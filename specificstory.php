@@ -63,7 +63,7 @@ $Defaite = ($getDefaite -> fetchColumn());
         <h2 class="text-center"><?php echo ($titreHistoire); ?> </h2>
 
             <br>
-        <p> <?php echo $contenu ?>  </small></p>
+        <p> <?php echo $contenu ?>  </p>
             <br>
 
                 <br>
