@@ -18,23 +18,19 @@ require_once "includes/head.php";
 
 
 $Story = $_SESSION['Histoire'];
-var_dump($_SESSION);
 $getId = $BDD->prepare('SELECT IdHistoire FROM Histoire WHERE Titre=?');
 $getId->execute(array($Story));
 $getIdStory = ($getId->fetchColumn());
-echo($getIdStory);
 
 
 $stmt = $BDD->query('SELECT * FROM Chapitre WHERE IdChapitre=(SELECT MAX(IdChapitre) FROM Chapitre)');
 $lastChapterId = ($stmt->fetchColumn());
-echo($lastChapterId);
 
 $getFirstChapterId = $BDD->prepare('SELECT IdPremierChapitre FROM Lien WHERE IdHistoire=? ');
 $getFirstChapterId->execute(array($getIdStory));
 $firstChapterId = ($getFirstChapterId->fetchColumn());
-echo($firstChapterId);
+
 $idDifference = $lastChapterId - $firstChapterId;
-echo($idDifference);
 ?>
 <br>
 <br>

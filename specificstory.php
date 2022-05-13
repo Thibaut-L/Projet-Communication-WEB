@@ -5,7 +5,6 @@ session_start();
 <?php
 $getIdHistoire = $_GET['idHistoire'];
 $getChapId = $_GET['IdChapitre'];
-var_dump($_GET);
 $req = $BDD -> prepare('SELECT Titre FROM Histoire WHERE idHistoire=?');
 $req -> execute(array($getIdHistoire));
 $titreHistoire = $req -> fetchColumn();
@@ -17,8 +16,7 @@ $contenu = ($getContenu -> fetchColumn());
 $getIdChoix = $BDD -> prepare('SELECT * FROM Choix WHERE IdChapitre =?');
 $getIdChoix -> execute(array($getChapId));
 $idChoix = ($getIdChoix -> fetchAll());
-echo(count($idChoix));
-echo("dd");
+
 
 
 $getIdChap = $BDD -> prepare('SELECT IdParaSuivant FROM Choix WHERE IdChapitre =?');
@@ -65,7 +63,7 @@ $Defaite = ($getDefaite -> fetchColumn());
         <h2 class="text-center"><?php echo ($titreHistoire); ?> </h2>
 
             <br>
-        <p><small> <?php echo $contenu ?>  </small></p>
+        <p> <?php echo $contenu ?>  </small></p>
             <br>
 
                 <br>
@@ -84,7 +82,7 @@ $Defaite = ($getDefaite -> fetchColumn());
 
         <?php } ?>
         <?php if($Victoire == 1 ){ ?>
-            <h2><a href="story.php" >Tu as perdu pas de chance, clique ici pour revenir à l'accueil </a> </h2>
+            <h2><a href="story.php" >Tu as gagné bravo à toi jeune aventurier </a> </h2>
 
         <?php } ?>
 

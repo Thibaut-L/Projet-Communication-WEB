@@ -48,21 +48,17 @@ require_once "includes/head.php";
 
     <?php
 	if (isset($_SESSION['login']) AND $_SESSION['password'] != "") {
-        echo 'a';
-		//die('Vous êtes déjà connecté !! <a href="index - copie.php">Retour à l\'accueil</a>');
+		die('Vous êtes déjà connecté !! <a href="index - copie.php">Retour à l\'accueil</a>');
 	}
     ?>
 
     <?php
 	// vérification que tous les champs sont remplis
 	if (empty($_POST["login"]) or empty($_POST["password"])) {
-        echo 'b';
-		//die("Vous devez remplir TOUS les champs !");
+		die("Vous devez remplir TOUS les champs !");
 	}
 	else {
-        echo 'c';
-        var_dump($_POST);
-		$login = $_POST["login"];
+        $login = $_POST["login"];
 		$password = $_POST["password"];
         $stmt = $BDD->prepare('insert into Utilisateur
         (usr_login, usr_password) values (?, ?)');
