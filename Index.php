@@ -3,7 +3,7 @@
 ?> 
 
 <!DOCTYPE html>
-<html>
+<html lang = "fr">
 <?php require_once "includes/head.php"; ?>
 <?php require_once "includes/header.php"; ?>
 <title>Accueil</title>

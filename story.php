@@ -7,7 +7,7 @@ $histoires = $BDD->query('select * from Histoire order by IdHistoire desc');
 ?>
 
 <!doctype html>
-<html>
+<html lang = "fr">
 <title>Histoires</title>
 
 <?php 
